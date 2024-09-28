@@ -1,6 +1,6 @@
 <script>
-	import Navbar from '../main-components/Navbar.svelte';
-	import '~/app.css';
+	import Navbar from '@/main-components/Navbar.svelte';
+	import '@/app.css';
 </script>
 
 <header class="fixed top-0 w-[100vw]">

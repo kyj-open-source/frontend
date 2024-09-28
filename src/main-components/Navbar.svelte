@@ -1,5 +1,5 @@
 <script lang="ts">
-	import '~/app.css';
+	import '@/app.css';
 
 	interface NavOption {
 		page: string;
