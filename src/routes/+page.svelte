@@ -1,7 +1,8 @@
 <script lang="ts">
 	import '@/app.css';
+	import SearchComponent from '@/components/common/SearchComponent.svelte';
 </script>
 
-<main>
-	<h1 class="text-4xl">Main</h1>
+<main class="h-[30vh] flex flex-col justify-center items-center">
+	<SearchComponent />
 </main>

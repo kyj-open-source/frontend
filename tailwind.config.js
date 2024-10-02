@@ -4,7 +4,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        'theme': 'var(--theme)'
+        'theme': '#3ca6a6'
+      },
+      fontWeight: {
+        'light': 300,
+        'regular': 400,
+        'medium': 500,
+        'semibold': 600,
+        'bold': 700
       }
     },
     container: {

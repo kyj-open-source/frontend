@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '@/app.css';
-	import instagramIcon from '@/assets/images/instagram-icon.svg';
-	import twitterIcon from '@/assets/images/twitter-icon.svg';
+	import instagramIcon from '@/assets/images/icons/instagram-icon.svg';
+	import twitterIcon from '@/assets/images/icons/twitter-icon.svg';
 
 	interface FooterLinks {
 		icon: string;
@@ -14,7 +14,7 @@
 	];
 </script>
 
-<div class="h-[150px] flex items-center bg-theme justify-center">
+<div class="h-[150px] flex items-center bg-[#012E40] justify-center">
 	<ul class="flex justify-center space-x-4">
 		{#each footerLinks as footerLink}
 			<li>

@@ -1,6 +1,6 @@
 <script>
-	import Footer from '@/main-components/Footer.svelte';
-	import Navbar from '@/main-components/Navbar.svelte';
+	import Footer from '@/components/common/Footer.svelte';
+	import Navbar from '@/components/common/Navbar.svelte';
 	import '@/app.css';
 </script>
 
@@ -11,7 +11,7 @@
 	</header>
 
 	<!-- Main Content -->
-	<main class="flex-grow mt-[70px] px-[10vw] py-[40px]">
+	<main class="flex-grow mt-[70px] px-[10vw] py-[40px] bg-[#F2E3D5] h-full">
 		<slot />
 	</main>
 

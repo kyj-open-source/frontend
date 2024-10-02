@@ -1,3 +1,61 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+	font-family: 'Hind';
+	src: url('./assets/fonts/Hind/Hind-Light.ttf');
+	font-weight: 300;
+}
+
+@font-face {
+	font-family: 'Hind';
+	src: url('./assets/fonts/Hind/Hind-Regular.ttf');
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: 'Hind';
+	src: url('./assets/fonts/Hind/Hind-Medium.ttf');
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: 'Hind';
+	src: url('./assets/fonts/Hind/Hind-SemiBold.ttf');
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: 'Hind';
+	src: url('./assets/fonts/Hind/Hind-Bold.ttf');
+	font-weight: 700;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Hind';
+}
+
+input {
+	outline: none;
+	font-family: inherit;
+}
+
+textarea {
+	font-family: inherit;
+}
+
+button {
+	outline: none;
+	font-family: inherit;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	opacity: 0.8;
+}
