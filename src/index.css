@@ -2,6 +2,8 @@
 
 @theme {
   --color-theme: oklch(from #3ca6a6 l c h);
+  --color-theme-l: oklch(from #49cccc l c h);
+  --color-theme-d: oklch(from #297373 l c h);
   --color-accent: oklch(from #012e40 l c h);
 }
 

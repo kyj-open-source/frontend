@@ -1,9 +1,9 @@
-import Layout from "components/Layout";
+import Layout from "components/layout/Layout";
 
 function App() {
   return (
     <div className="">
-      <Layout />
+      <Layout children={<div></div>} />
     </div>
   );
 }
