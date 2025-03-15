@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --color-theme: oklch(from #3ca6a6 l c h);
+  --color-accent: oklch(from #012e40 l c h);
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("./assets/fonts/OpenSans_variable.ttf");
+}
+
+body {
+  font-family: "OpenSans";
+  padding: 0;
+  margin: 0;
+}
