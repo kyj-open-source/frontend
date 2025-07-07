@@ -1,6 +1,6 @@
-import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
+import React from "react";
+import Header from "./Header";
+import Footer from "./Footer";
 
 interface LayoutProps {
   children?: React.ReactNode;
@@ -15,7 +15,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       </header>
 
       {/* Main Content */}
-      <main className="flex-grow mt-[70px] px-[10vw] py-[40px] bg-white h-full">
+      <main className="flex-grow mt-[70px] px-[10vw] py-8 bg-white h-full">
         {children}
       </main>
 

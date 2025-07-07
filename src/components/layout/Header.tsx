@@ -6,6 +6,7 @@ interface NavOption {
 }
 
 const navOptions: readonly NavOption[] = [
+  { page: 'Home', link: '/' },
   { page: 'Roles', link: '/roles' },
   { page: 'Jobs', link: '/jobs' },
   { page: 'Forum', link: '/forum' },

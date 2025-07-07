@@ -21,11 +21,11 @@ export function resetTextarea(textarea: HTMLTextAreaElement | null) {
 export function handleKeydown(
   event: React.KeyboardEvent<HTMLTextAreaElement>,
   textarea: HTMLTextAreaElement | null,
-  moveToTopCallback: () => void
+  // moveToTopCallback: () => void
 ) {
   if (event.key === "Enter" && !event.shiftKey) {
     event.preventDefault();
-    moveToTopCallback();
+    // moveToTopCallback();
   } else if (event.key === "Enter" && event.shiftKey) {
     console.log("Shift + Enter detected, adding new line");
   }
