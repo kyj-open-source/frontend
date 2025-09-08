@@ -1,0 +1,35 @@
+/* @import "tailwindcss"; */
+/* @import "tailwindcss/preflight"; */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+:root {
+  --theme: oklch(74% 0.13 190); /* teal */
+  --theme-l: oklch(82% 0.14 190); /* lighter teal */
+  --theme-d: oklch(65% 0.12 190); /* darker teal */
+  --accent: oklch(25% 0.06 230); /* deep navy */
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
