@@ -22,7 +22,8 @@ export interface Job {
   title: string;
   companyName: string;
   location: string;
-  description: string; // <-- Add this field
+  description: string;
+  skills: Skill[];
 }
 
 export interface Resource {
@@ -30,5 +31,11 @@ export interface Resource {
   title: string;
   url: string;
   type: "ARTICLE" | "VIDEO" | "COURSE";
-  description: string; // <-- And this one
+  description: string;
+  skills: Skill[];
+}
+
+export interface Skill {
+  id: string;
+  name: string;
 }

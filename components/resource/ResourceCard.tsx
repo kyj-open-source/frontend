@@ -1,10 +1,8 @@
 import { Resource } from '@/lib/types';
-// Assuming your common Card component is at this path
 import Card from '../common/Card';
+import SkillTag from '../common/SkillTag';
 
 export default function ResourceCard({ resource }: { resource: Resource }) {
-	// This component also uses your generic Card.
-	// It makes the entire card a clickable link.
 	return (
 		<a href={resource.url} target="_blank" rel="noopener noreferrer" className="block hover:scale-[1.02] transition-transform">
 			<Card title={resource.title}>
@@ -14,6 +12,13 @@ export default function ResourceCard({ resource }: { resource: Resource }) {
 						{resource.type}
 					</span>
 				</div>
+				{resource.skills && resource.skills.length > 0 && (
+					<div className="mt-4 flex flex-wrap gap-2 border-t pt-3">
+						{resource.skills.map((skill) => (
+							<SkillTag key={skill.id} skill={skill} />
+						))}
+					</div>
+				)}
 			</Card>
 		</a>
 	);
