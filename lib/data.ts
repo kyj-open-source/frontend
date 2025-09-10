@@ -1,7 +1,8 @@
 import { SearchResults } from "@/lib/types";
 
 export async function getSearchResults(query: string): Promise<SearchResults> {
-  const API_BASE_URL = "http://localhost:3000";
+  const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+
   const res = await fetch(
     `${API_BASE_URL}/search?q=${encodeURIComponent(query)}`,
     {
