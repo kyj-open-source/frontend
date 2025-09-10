@@ -1,1 +1,0 @@
-self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/home/suyeshjadhav/Documents/KYJ/frontend/app/layout\":[\"static/media/8f605fdd2ad38233-s.p.ttf\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
