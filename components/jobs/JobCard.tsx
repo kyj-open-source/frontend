@@ -1,4 +1,4 @@
-'use client'; // This component now handles user interaction
+'use client';
 
 import { useState } from 'react';
 import { Job } from '@/lib/types';
@@ -9,28 +9,29 @@ import SkillTag from '../common/SkillTag';
 export default function JobCard({ job, isInitiallySaved }: { job: Job; isInitiallySaved: boolean; }) {
 	const [isSaved, setIsSaved] = useState(isInitiallySaved);
 
-	const handleSave = async (e: React.MouseEvent) => {
-		e.preventDefault(); // Prevent link navigation if the card is wrapped in <a>
-		e.stopPropagation(); // Stop the event from bubbling up
+	const handleSave = async (e: React.SyntheticEvent) => {
+		e.preventDefault();
+		e.stopPropagation();
 
-		// Optimistic UI update for instant feedback
+		const previous = isSaved;
 		setIsSaved(!isSaved);
 
-		const method = !isSaved ? 'POST' : 'DELETE';
+		const method = !previous ? 'POST' : 'DELETE';
+		const url = !previous
+			? `/api/jobs/${job.id}/save`
+			: `/api/jobs/${job.id}/unsave`;
 
 		try {
-			const response = await fetch(`/api/jobs/${job.id}/save`, {
+			const response = await fetch(url, {
 				method: method,
 			});
 
 			if (!response.ok) {
-				// If the API call fails, revert the state and alert the user
-				setIsSaved(isSaved);
+				setIsSaved(previous); // revert to previous
 				alert('Failed to update save status. Please try again.');
 			}
 		} catch (error) {
-			// Revert state on network error
-			setIsSaved(isSaved);
+			setIsSaved(previous); // revert to previous
 			alert('An error occurred. Please try again.');
 		}
 	};
@@ -42,13 +43,20 @@ export default function JobCard({ job, isInitiallySaved }: { job: Job; isInitial
 				<p className="text-gray-500 text-sm mt-1">{job.location}</p>
 
 				{/* Save Button */}
-				<button
+				<span
+					role="button"
+					tabIndex={0}
 					onClick={handleSave}
-					className="absolute top-0 right-0 p-1 rounded-full hover:bg-gray-200 transition-colors"
+					onKeyDown={(e) => {
+						if (e.key === 'Enter' || e.key === ' ') {
+							handleSave(e);
+						}
+					}}
+					className="absolute top-0 right-0 p-1 rounded-full hover:bg-gray-200 transition-colors cursor-pointer"
 					aria-label={isSaved ? 'Unsave job' : 'Save job'}
 				>
 					<BookmarkIcon filled={isSaved} />
-				</button>
+				</span>
 
 				{job.skills && job.skills.length > 0 && (
 					<div className="mt-4 flex flex-wrap gap-2">
@@ -69,6 +77,8 @@ function BookmarkIcon({ filled }: { filled: boolean }) {
 			viewBox="0 0 24 24"
 			className={`h-6 w-6 ${filled ? 'text-indigo-600 fill-current' : 'text-gray-500 fill-none stroke-current'}`}
 			strokeWidth={2}
+			focusable={false}
+			aria-hidden={true}
 		>
 			<path
 				strokeLinecap="round"
