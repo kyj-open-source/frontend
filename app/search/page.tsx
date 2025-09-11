@@ -8,7 +8,8 @@ interface SearchPageProps {
 }
 
 export default async function SearchPage({ searchParams }: SearchPageProps) {
-	const query = searchParams.q || '';
+	const params = await searchParams;
+	const query = params.q || '';
 
 	if (!query) {
 		return (

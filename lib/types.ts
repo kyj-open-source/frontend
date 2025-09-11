@@ -24,6 +24,7 @@ export interface Job {
   location: string;
   description: string;
   skills: Skill[];
+  isSaved: boolean;
 }
 
 export interface Resource {
