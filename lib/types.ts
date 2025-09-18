@@ -24,6 +24,7 @@ export interface Job {
   location: string;
   description: string;
   skills: Skill[];
+  isSaved: boolean;
 }
 
 export interface Resource {
@@ -33,6 +34,7 @@ export interface Resource {
   type: "ARTICLE" | "VIDEO" | "COURSE";
   description: string;
   skills: Skill[];
+  isSaved: boolean;
 }
 
 export interface Skill {

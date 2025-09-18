@@ -1,10 +1,9 @@
 import { SearchResults } from "@/lib/types";
 
 export async function getSearchResults(query: string): Promise<SearchResults> {
-  const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
-
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL || "";
   const res = await fetch(
-    `${API_BASE_URL}/search?q=${encodeURIComponent(query)}`,
+    `${apiUrl}/api/search?q=${encodeURIComponent(query)}`,
     {
       cache: "no-store",
     }
